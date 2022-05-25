@@ -1,0 +1,16 @@
+#!/bin/bash
+# Script Testing
+echo "Monitor Mode Setup"
+
+ifconfig wls4 down
+iwconfig wls4 mode monitor
+ifconfig wls4 up
+
+ifconfig wlp8s0 down
+iwconfig wlp8s0 mode monitor
+ifconfig wlp8s0 up
+
+iw dev wls4 set channel 40 HT40-
+iw dev wlp8s0 set channel 40 HT40-
+
+iwconfig
